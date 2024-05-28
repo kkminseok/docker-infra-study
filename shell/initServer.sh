@@ -1,0 +1,1 @@
+docker run -it -d --name wasServer --cpuset-cpus="1-2" --memory 2G ubuntu:22.04

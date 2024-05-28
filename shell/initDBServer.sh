@@ -1,0 +1,1 @@
+docker run -it -d --name DBServer --cpuset-cpus="3-4" --memory 4G ubuntu:22.04
