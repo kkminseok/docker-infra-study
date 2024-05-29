@@ -8,7 +8,6 @@ apt-get update
 apt-get install -y build-essential libpcre3 libpcre3-dev zlib1g-dev libssl-dev
 apt-get install -y curl
 
-
 # 디렉터리 생성
 mkdir -p /home/ubuntu/apps
 mkdir -p /home/ubuntu/script
@@ -29,5 +28,13 @@ cd nginx
 
 make
 make install
+
+echo 'export PATH=$PATH:/home/ubuntu/apps/nginx/sbin' >> ~/.bash_profile
+source ~/.bash_profile
+
+nginx -v
+
+./home/ubuntu/apps/nginx/sbin/nginx
+
 
 tail -f /dev/null
