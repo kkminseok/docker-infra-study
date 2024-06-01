@@ -10,6 +10,7 @@ apt-get install -y curl
 
 # 디렉터리 생성
 mkdir -p /home/ubuntu/apps
+mkdir -p /home/ubuntu/apps/front
 mkdir -p /home/ubuntu/script
 mkdir -p /home/ubuntu/conf
 mkdir -p /home/ubuntu/logs
@@ -34,7 +35,12 @@ source ~/.bash_profile
 
 nginx -v
 
-./home/ubuntu/apps/nginx/sbin/nginx
+cp -r /home/ubuntu/apps/front/** /home/ubuntu/apps/nginx/html
+
+cd /home/ubuntu/apps/nginx/sbin
+
+./nginx
+./nginx -s reload
 
 
 tail -f /dev/null
