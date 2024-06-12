@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/business.main.iml" filepath="$PROJECT_DIR$/.idea/modules/business.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/docker-infra-study.iml" filepath="$PROJECT_DIR$/.idea/docker-infra-study.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gateway.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/business/server.business.main.iml" filepath="$PROJECT_DIR$/.idea/modules/business/server.business.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eurekaServer/server.eurekaServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eurekaServer/server.eurekaServer.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gateway/server.gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gateway/server.gateway.main.iml" />
     </modules>
   </component>

@@ -9,9 +9,21 @@
         </processorPath>
         <module name="server.gateway.main" />
         <module name="server.business.main" />
+        <module name="server.eurekaServer.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="business" target="17" />
+      <module name="business.main" target="17" />
+      <module name="business.test" target="17" />
+      <module name="eurekaServer" target="17" />
+      <module name="eurekaServer.main" target="17" />
+      <module name="eurekaServer.test" target="17" />
+      <module name="gateway" target="17" />
+      <module name="gateway.main" target="17" />
+      <module name="gateway.test" target="17" />
+      <module name="org.example.eurekaServer.main" target="17" />
+      <module name="org.example.eurekaServer.test" target="17" />
       <module name="server.main" target="21" />
       <module name="server.test" target="21" />
     </bytecodeTargetLevel>

@@ -15,6 +15,11 @@ subprojects {
 
     compileJava.options.encoding='UTF-8'
 
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:2021.0.5"  // 버전은 필요에 따라 조정
+        }
+    }
 
     repositories {
         mavenCentral()
@@ -44,6 +49,10 @@ subprojects {
     test {
         useJUnitPlatform()
     }
+
+//    tasks.withType(Test) {
+//        enabled = false
+//    }
 
 }
 
