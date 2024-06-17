@@ -37,7 +37,8 @@ RUN ./configure --prefix=/home/ubuntu/apps/nginx --pid-path=/home/ubuntu/run/ngi
 RUN make
 RUN make install
 
-RUN echo 'export PATH=$PATH:/home/ubuntu/apps/nginx/sbin' >> ~/.bashrc
+# RUN echo 'export PATH=$PATH:/home/ubuntu/apps/nginx/sbin' >> ~/.bashrc
+ENV PATH="/home/ubuntu/apps/nginx/sbin:${PATH}"
 
 
 RUN cp -r /home/ubuntu/apps/front/** /home/ubuntu/apps/nginx/html
@@ -45,9 +46,9 @@ RUN cp -r /home/ubuntu/apps/front/** /home/ubuntu/apps/nginx/html
 WORKDIR  /home/ubuntu/apps/nginx/sbin
 
 
-RUN echo "#!/bin/sh\nnginx -g 'daemon off;'" > /home/ubuntu/apps/nginx/sbin/run.sh && \
+RUN echo "#!/bin/sh\nnginx" > /home/ubuntu/apps/nginx/sbin/run.sh && \
     chmod +x /home/ubuntu/apps/nginx/sbin/run.sh
 
 
-CMD ["/home/ubuntu/apps/nginx/sbin/run.sh"]
-
+# CMD ["/home/ubuntu/apps/nginx/sbin/run.sh"]
+# ENTRYPOINT ["/home/ubuntu/apps/nginx/sbin/run.sh"]

@@ -11,3 +11,10 @@ RUN java -version
 
 WORKDIR /home/ubuntu
 
+COPY ./eurekaServer/build/libs/eurekaServer-0.0.1-SNAPSHOT.jar ./
+
+COPY ./business/build/libs/business-0.0.1-SNAPSHOT.jar ./
+
+COPY ./gateway/build/libs/gateway-0.0.1-SNAPSHOT.jar ./
+
+CMD ["/bin/bash"]
