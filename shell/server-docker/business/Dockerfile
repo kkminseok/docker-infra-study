@@ -11,10 +11,12 @@ RUN java -version
 
 WORKDIR /home/ubuntu
 
-COPY ./eurekaServer/build/libs/eurekaServer-0.0.1-SNAPSHOT.jar ./
-
 COPY ./business/build/libs/business-0.0.1-SNAPSHOT.jar ./
 
-COPY ./gateway/build/libs/gateway-0.0.1-SNAPSHOT.jar ./
+RUN echo '#!/bin/bash\n\
+java -jar /home/ubuntu/business-0.0.1-SNAPSHOT.jar > /home/ubuntu/business.log 2>&1 &\n\
+wait' > /home/ubuntu/start.sh
 
-CMD ["/bin/bash"]
+RUN chmod +x /home/ubuntu/start.sh
+
+CMD ["/home/ubuntu/start.sh"]
