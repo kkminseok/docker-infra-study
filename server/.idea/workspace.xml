@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b213531c-3dd5-4a3c-af0c-84951c68d15e" name="Changes" comment="feat: server module init">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shell/server-docker/Dockerfile" beforeDir="false" />
-    </list>
+    <list default="true" id="b213531c-3dd5-4a3c-af0c-84951c68d15e" name="Changes" comment="feat: server module init" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -329,7 +326,7 @@
       <option name="presentableId" value="Default" />
       <updated>1718034144942</updated>
       <workItem from="1718034146175" duration="1568000" />
-      <workItem from="1718632407854" duration="9305000" />
+      <workItem from="1718632407854" duration="10343000" />
     </task>
     <task id="LOCAL-00001" summary="feat: server module init">
       <option name="closed" value="true" />
