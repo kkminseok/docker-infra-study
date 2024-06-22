@@ -3,6 +3,10 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.5' apply false
 }
 
+ext {
+    springCloudVersion = "2023.0.2"
+}
+
 allprojects {
     group = 'org.example'
     version = '1.0-SNAPSHOT'
@@ -17,7 +21,7 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:2021.0.5"  // 버전은 필요에 따라 조정
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"  // 버전은 필요에 따라 조정
         }
     }
 

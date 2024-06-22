@@ -21,7 +21,7 @@
 - business Container2: business Container1을 duplicate한 서버. 이중화 구조를 만들기 위함.
 - DB Container1: `Elastic Search`, `Redis`, `MySQL`, 등 데이터들을 관리하는 서버
 
-![](infra.png)
+![](img/infra/infra.png)
 
 
 ### 기록
@@ -60,4 +60,6 @@
 #### 4주차
 
 - 목표: jenkins구축 / business 서버 이중화 구성 / DB 컨테이너 구성(es, redis, 등)
-  
+  1. (gateway-eureka)/business 를 docker-compose로 구성(cpu, memory제한 추가)
+  2. business 컨테이너 2중화 구조 및 통신 확인 => 라운드로빈 형식으로 호출됨
+  ![](img/learn/business-2.png)
