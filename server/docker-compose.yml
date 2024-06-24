@@ -1,6 +1,7 @@
 services:
   gw-server:
     image: gateway-server:latest
+    container_name: gw-server
     build:
       #context: ./
       dockerfile: ../shell/server-docker/gateway/Dockerfile
@@ -20,44 +21,51 @@ services:
     
   business-service:
     image: business-service:latest
+    container_name: business-server-1
     build:
       dockerfile: ../shell/server-docker/business/Dockerfile
     deploy:
       resources:
         limits:
-          cpus: 0.25
-          memory: 1G
+          cpus: 0.5
+          memory: 2G
         reservations:
           cpus: 0.125
           memory: 128M
     networks:
       - study-test-net
+    tty: true
     depends_on:
       - gw-server
+      #- mysql-db
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://gw-server:8761/eureka/
 
   business-service-2:
     image: business-service:latest
+    container_name: business-server-2
     build:
       dockerfile: ../shell/server-docker/business/Dockerfile
     deploy:
       resources:
         limits:
-          cpus: 0.25
-          memory: 1G
+          cpus: 0.5
+          memory: 2G
         reservations:
           cpus: 0.125
           memory: 128M
     networks:
       - study-test-net
+    tty: true
     depends_on:
       - gw-server
+      #- mysql-db
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://gw-server:8761/eureka/
 
   mysql-db:
     image: mysql:8.3
+    container_name: mysql-server
     environment:
       MYSQL_ROOT_PASSWORD: infratest
     ports:
