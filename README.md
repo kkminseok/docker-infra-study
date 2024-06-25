@@ -66,3 +66,4 @@
   3. ubuntu로 띄운 컨테이너에 Mysql, ES등을 추가하려했지만 복잡한 설정방식 등으로 인해 너무나도 비효율적 판단으로 생각해 각 컨테이너로 띄우기로 함.
   4. mysql container 실행(13306 포트)
   5. business 서버에서 JPA 작성(user 정보를 가져오는 로직), mysql 접근확인
+    - mysql 8버전 이후 allowPulicKey추가 필요
