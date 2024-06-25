@@ -21,7 +21,7 @@ public class DemoController {
     @GetMapping("/hello")
     public String hello(@RequestParam Long param) {
         log.info("hello");
-        ResponseEntity<String> result = restTemplate.exchange("http://business/" +"userId="+ param,
+        ResponseEntity<String> result = restTemplate.exchange("http://business/?" +"userId="+ param,
                 HttpMethod.GET, null, String.class);
         return result.toString();
     }

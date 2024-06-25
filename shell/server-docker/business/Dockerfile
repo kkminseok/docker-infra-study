@@ -14,9 +14,10 @@ WORKDIR /home/ubuntu
 COPY ./business/build/libs/business-0.0.1-SNAPSHOT.jar ./
 
 RUN echo '#!/bin/bash\n\
-java -jar /home/ubuntu/business-0.0.1-SNAPSHOT.jar --spring.profiles.active=beta > /home/ubuntu/business.log 2>&1 &\n\
-wait' > /home/ubuntu/start.sh
+nohup java -jar /home/ubuntu/business-0.0.1-SNAPSHOT.jar --spring.profiles.active=beta > /home/ubuntu/business.log 2>&1 &\n\
+tail -f /dev/null' > /home/ubuntu/start.sh
 
-#RUN chmod +x /home/ubuntu/start.sh
 
-#CMD ["/home/ubuntu/start.sh"]
+RUN chmod +x /home/ubuntu/start.sh
+
+CMD ["/home/ubuntu/start.sh"]

@@ -36,8 +36,10 @@ services:
       - study-test-net
     tty: true
     depends_on:
-      - gw-server
-      #- mysql-db
+      gw-server:
+        condition: service_started
+      mysql-db:
+        condition: service_healthy
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://gw-server:8761/eureka/
 
@@ -58,8 +60,10 @@ services:
       - study-test-net
     tty: true
     depends_on:
-      - gw-server
-      #- mysql-db
+      gw-server:
+        condition: service_started
+      mysql-db:
+        condition: service_healthy
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://gw-server:8761/eureka/
 
@@ -74,7 +78,12 @@ services:
       - mysql-data:/var/lib/mysql
     networks:
       - study-test-net
-  
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -pinfratest"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
 networks:
   study-test-net:
     external: true

@@ -18,7 +18,7 @@ COPY ./gateway/build/libs/gateway-0.0.1-SNAPSHOT.jar ./
 RUN echo '#!/bin/bash\n\
 java -jar /home/ubuntu/eurekaServer-0.0.1-SNAPSHOT.jar > /home/ubuntu/eurekaServer.log 2>&1 &\n\
 java -jar /home/ubuntu/gateway-0.0.1-SNAPSHOT.jar > /home/ubuntu/gateway.log 2>&1 &\n\
-wait' > /home/ubuntu/start.sh
+tail -f /dev/null' > /home/ubuntu/start.sh
 
 RUN chmod +x /home/ubuntu/start.sh
 
